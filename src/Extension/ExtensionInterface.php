@@ -11,17 +11,17 @@ interface ExtensionInterface
     /**
      * @return int|null maximum number of extension tag occurences per Url
      */
-    public static function getLimit(): ?int;
+    public static function getLimit();//: ?int;
 
     /**
      * Writes XML namespace attribute
      * @param \XMLWriter $writer
      */
-    public static function writeXmlNamepsace(\XMLWriter $writer): void;
+    public static function writeXmlNamepsace(\XMLWriter $writer);//: void;
 
     /**
      * Writes extension tag
      * @param \XMLWriter $writer
      */
-    public function write(\XMLWriter $writer): void;
+    public function write(\XMLWriter $writer);//: void;
 }

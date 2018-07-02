@@ -32,7 +32,7 @@ class DeflateWriter implements WriterInterface
      * @param string $data
      * @param int $flushMode zlib flush mode to use for writing
      */
-    private function write($data, $flushMode): void
+    private function write($data, $flushMode)//: void
     {
         \assert($this->file !== null);
 
@@ -45,7 +45,7 @@ class DeflateWriter implements WriterInterface
      *
      * @param string $data
      */
-    public function append($data): void
+    public function append($data)//: void
     {
         $this->write($data, ZLIB_NO_FLUSH);
     }
@@ -53,7 +53,7 @@ class DeflateWriter implements WriterInterface
     /**
      * Make sure all data was written
      */
-    public function finish(): void
+    public function finish()//: void
     {
         $this->write('', ZLIB_FINISH);
 

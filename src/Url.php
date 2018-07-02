@@ -69,7 +69,7 @@ class Url
     /**
      * @return \DateTimeInterface
      */
-    public function getLastModified(): ?\DateTimeInterface
+    public function getLastModified()//: ?\DateTimeInterface
     {
         return $this->lastModified;
     }
@@ -87,7 +87,7 @@ class Url
     /**
      * @return string
      */
-    public function getChangeFrequency(): ?string
+    public function getChangeFrequency()//: ?string
     {
         return $this->changeFrequency;
     }

@@ -31,7 +31,7 @@ class TempFileGZIPWriter implements WriterInterface
      *
      * @param string $data
      */
-    public function append($data): void
+    public function append($data)//: void
     {
         \assert($this->tempFile !== null);
 
@@ -41,7 +41,7 @@ class TempFileGZIPWriter implements WriterInterface
     /**
      * Deflate buffered data
      */
-    public function finish(): void
+    public function finish()//: void
     {
         \assert($this->tempFile !== null);
 

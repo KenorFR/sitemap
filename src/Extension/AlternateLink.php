@@ -62,7 +62,7 @@ class AlternateLink implements ExtensionInterface
     /**
      * @inheritdoc
      */
-    public static function writeXmlNamepsace(\XMLWriter $writer): void
+    public static function writeXmlNamepsace(\XMLWriter $writer)//: void
     {
         $writer->writeAttribute('xmlns:xhtml', 'http://www.w3.org/1999/xhtml');
     }
@@ -70,7 +70,7 @@ class AlternateLink implements ExtensionInterface
     /**
      * @inheritdoc
      */
-    public function write(\XMLWriter $writer): void
+    public function write(\XMLWriter $writer)//: void
     {
         $writer->startElement('xhtml:link');
         $writer->startAttribute('rel');

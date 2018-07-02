@@ -23,7 +23,7 @@ class PlainFileWriter implements WriterInterface
     /**
      * @inheritdoc
      */
-    public function append($data): void
+    public function append($data)//: void
     {
         \assert($this->file !== null);
 
@@ -33,7 +33,7 @@ class PlainFileWriter implements WriterInterface
     /**
      * @inheritdoc
      */
-    public function finish(): void
+    public function finish()//: void
     {
         \assert($this->file !== null);
 

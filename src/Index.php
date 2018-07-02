@@ -36,7 +36,7 @@ class Index
     /**
      * Creates new file
      */
-    private function createNewFile(): void
+    private function createNewFile()//: void
     {
         $this->writer = new XMLWriter();
         $this->writer->openMemory();
@@ -53,7 +53,7 @@ class Index
      * @param integer $lastModified unix timestamp of sitemap modification time
      * @throws \InvalidArgumentException
      */
-    public function addSitemap($location, $lastModified = null): void
+    public function addSitemap($location, $lastModified = null)//: void
     {
         if ($this->writer === null) {
             $this->createNewFile();
@@ -79,7 +79,7 @@ class Index
     /**
      * Finishes writing
      */
-    public function write(): void
+    public function write()//: void
     {
         if ($this->writer instanceof XMLWriter) {
             $this->writer->endElement();
@@ -97,7 +97,7 @@ class Index
      * @param bool $value
      * @throws \RuntimeException when trying to enable gzip while zlib is not available
      */
-    public function setUseGzip($value): void
+    public function setUseGzip($value)//: void
     {
         if ($value && !\extension_loaded('zlib')) {
             throw new \RuntimeException('Zlib extension must be installed to gzip the sitemap.');

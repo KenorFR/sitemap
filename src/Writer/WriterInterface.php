@@ -15,12 +15,12 @@ interface WriterInterface
      *
      * @param string $data
      */
-    public function append($data): void;
+    public function append($data);//: void;
 
     /**
      * Ensure all queued data is written and close the target
      *
      * No further data may be appended after this.
      */
-    public function finish(): void;
+    public function finish();//: void;
 }

@@ -59,7 +59,7 @@ class Image implements ExtensionInterface
     /**
      * @param string $caption
      */
-    public function setCaption(string $caption): void
+    public function setCaption(string $caption)//: void
     {
         $this->caption = $caption;
     }
@@ -75,7 +75,7 @@ class Image implements ExtensionInterface
     /**
      * @param string $geoLocation
      */
-    public function setGeoLocation(string $geoLocation): void
+    public function setGeoLocation(string $geoLocation)//: void
     {
         $this->geoLocation = $geoLocation;
     }
@@ -91,7 +91,7 @@ class Image implements ExtensionInterface
     /**
      * @param string $title
      */
-    public function setTitle($title): void
+    public function setTitle($title)//: void
     {
         $this->title = $title;
     }
@@ -107,7 +107,7 @@ class Image implements ExtensionInterface
     /**
      * @param string $license
      */
-    public function setLicense(string $license): void
+    public function setLicense(string $license)//: void
     {
         $this->license = $license;
     }
@@ -131,7 +131,7 @@ class Image implements ExtensionInterface
     /**
      * @inheritdoc
      */
-    public function write(\XMLWriter $writer): void
+    public function write(\XMLWriter $writer)//: void
     {
         $writer->startElement('image:image');
 
@@ -158,7 +158,7 @@ class Image implements ExtensionInterface
      * Writes XML namespace attribute
      * @param \XMLWriter $writer
      */
-    public static function writeXmlNamepsace(\XMLWriter $writer): void
+    public static function writeXmlNamepsace(\XMLWriter $writer)//: void
     {
         $writer->writeAttribute('xmlns:image', 'http://www.google.com/schemas/sitemap-image/1.1');
     }

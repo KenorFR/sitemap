@@ -108,7 +108,7 @@ class Sitemap
      * Creates new file
      * @throws \RuntimeException if file is not writeable
      */
-    protected function createNewFile(): void
+    protected function createNewFile()//: void
     {
         $this->fileCount++;
         $filePath = $this->getCurrentFilePath();
@@ -151,7 +151,7 @@ class Sitemap
      * @throws \RuntimeException
      * @throws \OverflowException
      */
-    protected function finishFile(): void
+    protected function finishFile()//: void
     {
         if ($this->writer !== null) {
             $this->writer->endElement();
@@ -173,7 +173,7 @@ class Sitemap
      * @throws \RuntimeException
      * @throws \OverflowException
      */
-    public function write(): void
+    public function write()//: void
     {
         $this->finishFile();
     }
@@ -185,7 +185,7 @@ class Sitemap
      * @throws \RuntimeException
      * @throws \OverflowException
      */
-    protected function flush($footSize = 10): void
+    protected function flush($footSize = 10)//: void
     {
         $data = $this->writer->flush();
         $dataSize = mb_strlen($data, '8bit');
@@ -216,7 +216,7 @@ class Sitemap
      * @throws \LogicException
      * @throws \RuntimeException
      */
-    public function addUrl(Url $url): void
+    public function addUrl(Url $url)//: void
     {
         if ($this->urlsCount >= $this->maxUrls) {
             $this->finishFile();
@@ -240,7 +240,7 @@ class Sitemap
      * @param Url $url
      * @throws \LogicException
      */
-    protected function writeUrl(Url $url): void
+    protected function writeUrl(Url $url)//: void
     {
         $this->writer->startElement('url');
         $this->writer->writeElement('loc', $url->getLocation());
@@ -306,7 +306,7 @@ class Sitemap
      * Default is 50000.
      * @param integer $number
      */
-    public function setMaxUrls($number): void
+    public function setMaxUrls($number)//: void
     {
         $this->maxUrls = (int)$number;
     }
@@ -316,7 +316,7 @@ class Sitemap
      * Default is 10485760 or 10 MiB.
      * @param integer $number
      */
-    public function setMaxBytes($number): void
+    public function setMaxBytes($number)//: void
     {
         $this->maxBytes = (int)$number;
     }
@@ -327,7 +327,7 @@ class Sitemap
      *
      * @param integer $number
      */
-    public function setBufferSize($number): void
+    public function setBufferSize($number)//: void
     {
         $this->bufferSize = (int)$number;
     }
@@ -338,7 +338,7 @@ class Sitemap
      *
      * @param bool $value
      */
-    public function setUseIndent($value): void
+    public function setUseIndent($value)//: void
     {
         $this->useIndent = (bool)$value;
     }
@@ -349,7 +349,7 @@ class Sitemap
      * @throws \RuntimeException when trying to enable gzip while zlib is not available or when trying to change
      * setting when some items are already written
      */
-    public function setUseGzip($value): void
+    public function setUseGzip($value)//: void
     {
         if ($value && !\extension_loaded('zlib')) {
             throw new \RuntimeException('Zlib extension must be enabled to gzip the sitemap.');
@@ -363,7 +363,7 @@ class Sitemap
     /**
      * Adds a document header
      */
-    protected function addHeader(): void
+    protected function addHeader()//: void
     {
         $this->writer->startDocument('1.0', 'UTF-8');
         $this->writer->setIndent($this->useIndent);
